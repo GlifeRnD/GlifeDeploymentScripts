@@ -1,4 +1,4 @@
-sudo useradd --p U6aMy0wojraho --create-home --shell "/bin/bash" --user-group --groups "users,sudo" app
+sudo useradd --password U6aMy0wojraho --create-home --shell "/bin/bash" --user-group --groups "users,sudo" app
 sudo passwd -d app
 USER_HOME=/home/app
 sudo -u "app" mkdir "$USER_HOME/.ssh"
