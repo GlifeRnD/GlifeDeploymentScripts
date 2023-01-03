@@ -5,6 +5,7 @@ if [ "$(whoami)" != "app" ]; then
 fi
 
 # Essentials
+sudo apt-get update
 sudo apt-get -y install unzip software-properties-common apt-transport-https autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx nginx-extras nginx-common
 
 # Nodejs
