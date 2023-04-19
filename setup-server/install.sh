@@ -37,15 +37,17 @@ echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 echo "Installing wkhtmltopdf font..."
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
 sudo apt-get install -y ./wkhtmltox_0.12.6-1.focal_amd64.deb
+rm -rf ./wkhtmltox_0.12.6-1.focal_amd64.deb
+echo "Removed wkhtmltopdf cache"
 
 # Pingfang font
 echo "Downloading pingfang font..."
 wget https://github.com/GlifeRnD/GlifeDeploymentScripts/raw/master/fonts/pingfang.zip
 echo "Installing pingfang font..."
 mkdir -p ~/.local/share/fonts
-unzip ./pingfang.zip -d ~/.local/share/fonts
+unzip -o ./pingfang.zip -d ~/.local/share/fonts
 rm -rf ./pingfang.zip
-echo "Removed downloaded pingfang font"
+echo "Removed pingfang font cache"
 
 # Redis
 sudo apt-get install -y redis-server
