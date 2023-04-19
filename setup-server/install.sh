@@ -7,7 +7,7 @@ fi
 # Essentials
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install wget unzip software-properties-common apt-transport-https autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx nginx-extras nginx-common
+sudo apt-get -y install git wget unzip software-properties-common apt-transport-https autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx nginx-extras nginx-common
 
 # Nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
