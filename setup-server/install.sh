@@ -6,7 +6,8 @@ fi
 
 # Essentials
 sudo apt-get update
-sudo apt-get -y install unzip software-properties-common apt-transport-https autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx nginx-extras nginx-common
+sudo apt-get -y upgrade
+sudo apt-get -y install wget unzip software-properties-common apt-transport-https autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx nginx-extras nginx-common
 
 # Nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
@@ -33,12 +34,18 @@ echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
 echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 
 # wkhtmltopdf
+echo "Installing wkhtmltopdf font..."
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-sudo apt -y install ./wkhtmltox_0.12.6-1.focal_amd64.deb
+sudo apt-get install -y ./wkhtmltox_0.12.6-1.focal_amd64.deb
 
+# Pingfang font
+echo "Downloading pingfang font..."
 wget https://github.com/GlifeRnD/GlifeDeploymentScripts/raw/master/fonts/pingfang.zip
+echo "Installing pingfang font..."
 mkdir -p ~/.local/share/fonts
 unzip ./pingfang.zip -d ~/.local/share/fonts
+rm -rf ./pingfang.zip
+echo "Removed downloaded pingfang font"
 
 # Redis
 sudo apt-get install -y redis-server
